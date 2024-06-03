@@ -10,11 +10,12 @@
 @prefix foodon: <https://foodon.org/> .
 
 
-nc-c: a owl:Ontology ;
-    <http://purl.org/dc/elements/1.1/creator> "---" ;
-    <http://purl.org/dc/elements/1.1/contributor> "---" ;
+
+nc-c:Ontology a owl:Ontology ;
+    <http://purl.org/dc/elements/1.1/creator>  "---";
+    <http://purl.org/dc/elements/1.1/contributor>  "---" ;
     owl:versionIRI <https://knowledge.next-cart.com/consumer/1.0.0> ;
-    <http://purl.org/dc/elements/1.1/publisher> "---" ;
+    <http://purl.org/dc/elements/1.1/publisher>  "---" ;
     <http://purl.org/dc/elements/1.1/title> "The NextCart Ontology - Consumer" ;
     <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
     <http://purl.org/vocab/vann/preferredNamespacePrefix> "nc-c" ;
@@ -63,11 +64,11 @@ nc-c:ShoppingList a owl:Class ;
     rdfs:comment "Represents a list of food items to be purchased." .
 
 nc-c:ShoppingItem a owl:Class ;
-    rdfs:label "ShoppingItem" ;
+    rdfs:label "Shopping Item" ;
     rdfs:comment "Represents an item in the shopping list or cart, detailing its quantity and price." .
     
 nc-c:ShoppingCart a owl:Class ;
-    rdfs:label "Purchased Food Items List" ;
+    rdfs:label "Shopping Cart" ;
     rdfs:comment "Represents a list of food items that has already been bought." .
 
 
@@ -78,57 +79,57 @@ nc-c:ShoppingCart a owl:Class ;
 schema:birthDate a owl:DatatypeProperty;
     rdfs:label "birth date" ;
     rdfs:domain nc-c:Consumer ;
-    rdfs:range rdfs:Date .
+    rdfs:range xsd:date .
 
 schema:familyName a owl:DatatypeProperty;
     rdfs:label "family name" ;
     rdfs:domain nc-c:Consumer ;
-    rdfs:range rdfs:String .
+    rdfs:range xsd:string .
 
 schema:gender a owl:DatatypeProperty;
     rdfs:label "gender" ;
     rdfs:domain nc-c:Consumer ;
-    rdfs:range rdfs:String .
+    rdfs:range xsd:string .
 
 schema:givenName a owl:DatatypeProperty;
     rdfs:label "given name" ;
     rdfs:domain nc-c:Consumer ;
-    rdfs:range rdfs:String .
+    rdfs:range xsd:string .
 
 schema:height a owl:DatatypeProperty;
     rdfs:label "height" ;
     rdfs:domain nc-c:Consumer ;
-    rdfs:range rdfs:Float .
+    rdfs:range xsd:float .
 
 nc-c:hasDate a owl:DatatypeProperty;
     rdfs:label "has date" ;
     rdfs:domain nc-c:Activity ;
-    rdfs:range rdfs:Date .
+    rdfs:range xsd:date .
 
 nc-c:hasDuration a owl:DatatypeProperty;
     rdfs:label "has duration" ;
     rdfs:domain nc-c:Activity ;
-    rdfs:range rdfs:Integer .
+    rdfs:range xsd:integer .
 
 nc-c:hasFrequency a owl:DatatypeProperty ;
     rdfs:label "has frequency" ;
     rdfs:domain nc-c:Activity ;
-    rdfs:range rdfs:Integer .
+    rdfs:range xsd:integer .
 
 nc-c:shoppingDate a owl:DatatypeProperty;
     rdfs:label "purchase date" ;
     rdfs:domain nc-c:ShoppingCart ;
-    rdfs:range rdfs:Date .
+    rdfs:range xsd:date .
 
 nc-c:shoppingItemQuantity a owl:DatatypeProperty ;
     rdfs:label "has quantity" ;
     rdfs:domain nc-c:ShoppingItem ;
-    rdfs:range rdfs:Integer .
+    rdfs:range xsd:integer .
 
 nc-c:shoppingItemPrice a owl:DatatypeProperty ;
     rdfs:label "has price" ;
     rdfs:domain nc-c:ShoppingItem ;
-    rdfs:range rdfs:Float .
+    rdfs:range xsd:float .
 
 # Object Properties
 
@@ -147,17 +148,13 @@ nc-c:performs a owl:ObjectProperty ;
     rdfs:domain nc-c:Consumer ;
     rdfs:range nc-c:Activity .
 
-nc-c:shoppingListContains a owl:ObjectProperty ;
-    rdfs:label "contains food item" ;
-    rdfs:domain nc-c:ShoppingList ;
-    rdfs:range nc-f:FoodItem .
 
 nc-c:includePreferences a owl:ObjectProperty ;
     rdfs:label "owns shopping list" ;
     rdfs:domain nc-c:Consumer ;
     rdfs:range nc-c:ShoppingList .
 
-nc-c:hasPurchasedList a owl:ObjectProperty ;
+nc-c:hasShoppingCart a owl:ObjectProperty ;
     rdfs:label "owns purchased item" ;
     rdfs:domain nc-c:Consumer ;
     rdfs:range nc-c:ShoppingCart .
@@ -166,12 +163,15 @@ nc-c:hasPurchasedList a owl:ObjectProperty ;
 nc-c:hasWeightObservation a owl:ObjectProperty ;
     rdfs:label "has weight observation" ;
     rdfs:domain nc-c:Consumer ;
-    rdfs:range schema:WeightObservation .
+    rdfs:range nc-c:WeightObservation .
 
 nc-c:shoppingCartContains a owl:ObjectProperty ;
-    rdfs:label "contains food item" ;
-    rdfs:domain nc-c:ShoppingCard ;
-    rdfs:range nc-f:ShoppingItem .
+    rdfs:domain nc-c:ShoppingCart ;
+    rdfs:range nc-c:ShoppingItem .
+
+nc-c:shoppingListContains a owl:ObjectProperty ;
+    rdfs:domain nc-c:ShoppingList ;
+    rdfs:range nc-c:ShoppingItem .
 
 
 nc-c:refersTo a owl:ObjectProperty ;
