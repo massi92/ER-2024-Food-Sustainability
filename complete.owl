@@ -23,9 +23,9 @@ nc-complete: a owl:Ontology ;
     <http://purl.org/vocab/vann/preferredNamespaceUri> "https://knowledge.next-cart.com/complete#" ;
     owl:versionInfo "1.0.0" ;
     owl:imports 
-        <https://raw.githubusercontent.com/food-sustainability-ontology/food-ontology/main/ontologies/consumer.owl> ,
-        <https://raw.githubusercontent.com/food-sustainability-ontology/food-ontology/main/ontologies/health-dietary.owl> ,
-        <https://raw.githubusercontent.com/food-sustainability-ontology/food-ontology/main/ontologies/sustainability.owl> .
+        <https://anonymous.4open.science/api/repo/ER-2024-Food-Sustainability/file/consumer.owl> ,
+        <https://anonymous.4open.science/api/repo/ER-2024-Food-Sustainability/file/health-dietary.owl> ,
+        <https://anonymous.4open.science/api/repo/ER-2024-Food-Sustainability/file/sustainability.owl> .
 
 # Object Properties
 nc-complete:hasRestrictedDiet a owl:ObjectProperty ;
