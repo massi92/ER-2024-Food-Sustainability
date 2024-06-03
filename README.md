@@ -52,3 +52,13 @@ Key classes in this module include:
 
 The schema of the sustainability module is as follows:
 ![NextCart Food Ontology Schema](https://anonymous.4open.science/r/ER-2024-Food-Sustainability/images/sustainability.png)
+
+
+## Importing the Ontology Modules
+
+To import the NextCart Food Ontology modules into tools like Protégé, Neo4j, or other ontology management systems, use the following links:
+
+- [Complete Ontology](https://anonymous.4open.science/api/repo/ER-2024-Food-Sustainability/file/consumer.owl)
+- [Consumer Module](https://anonymous.4open.science/api/repo/ER-2024-Food-Sustainability/file/consumer.owl)
+- [Nutrition Module](https://anonymous.4open.science/api/repo/ER-2024-Food-Sustainability/file/health-dietary.owl)
+- [Sustainability Module](https://anonymous.4open.science/api/repo/ER-2024-Food-Sustainability/file/sustainability.owl)
