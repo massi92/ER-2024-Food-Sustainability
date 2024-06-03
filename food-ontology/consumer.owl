@@ -1,0 +1,180 @@
+@prefix nc-c: <https://knowledge.next-cart.com/consumer#> .
+@prefix nc-f: <https://knowledge.next-cart.com/food#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fo: <http://purl.obolibrary.org/obo/> .
+@prefix tb: <https://w3id.org/timebank/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix foodon: <https://foodon.org/> .
+
+
+nc-c: a owl:Ontology ;
+    <http://purl.org/dc/elements/1.1/creator> "---" ;
+    <http://purl.org/dc/elements/1.1/contributor> "---" ;
+    owl:versionIRI <https://knowledge.next-cart.com/consumer/1.0.0> ;
+    <http://purl.org/dc/elements/1.1/publisher> "---" ;
+    <http://purl.org/dc/elements/1.1/title> "The NextCart Ontology - Consumer" ;
+    <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+    <http://purl.org/vocab/vann/preferredNamespacePrefix> "nc-c" ;
+    <http://purl.org/vocab/vann/preferredNamespaceUri> "https://knowledge.next-cart.com/consumer#" ;
+    owl:versionInfo "1.0.0" .
+
+nc-c:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:comment "Represents a human being." .
+
+nc-c:Consumer a owl:Class ;
+    rdfs:label "Consumer" ;
+    rdfs:subClassOf nc-c:Person ;
+    rdfs:comment "Represents someone who buys and consumes food items." .
+
+nc-c:Activity a owl:Class ;
+    rdfs:label "Activity" ;
+    rdfs:comment "Represents any kind of activity." .
+
+nc-c:WeightObservation a owl:Class ;
+    rdfs:label "Weight Observation" ;
+    rdfs:comment "Represents the weight observation." .
+
+dbo:Sleep a owl:Class ;
+    rdfs:label "Sleep" ;
+    rdfs:subClassOf nc-c:Activity ;
+    rdfs:comment "Represents the activity of sleeping." .
+
+dbo:Sport a owl:Class ;
+    rdfs:label "Sport" ;
+    rdfs:subClassOf nc-c:Activity ;
+    rdfs:comment "Represents the activity of engaging in sports." .
+
+dbo:Running a owl:Class ;
+    rdfs:label "Running" ;
+    rdfs:subClassOf dbo:Sport ;
+    rdfs:comment "Represents the sport of running." .
+
+dbo:Swimming a owl:Class ;
+    rdfs:label "Swimming" ;
+    rdfs:subClassOf dbo:Sport ;
+    rdfs:comment "Represents the sport of swimming." .
+
+nc-c:ShoppingList a owl:Class ;
+    rdfs:label "Shopping List" ;
+    rdfs:comment "Represents a list of food items to be purchased." .
+
+nc-c:ShoppingItem a owl:Class ;
+    rdfs:label "ShoppingItem" ;
+    rdfs:comment "Represents an item in the shopping list or cart, detailing its quantity and price." .
+    
+nc-c:ShoppingCart a owl:Class ;
+    rdfs:label "Purchased Food Items List" ;
+    rdfs:comment "Represents a list of food items that has already been bought." .
+
+
+
+# Equivalences
+
+# Data Properties
+schema:birthDate a owl:DatatypeProperty;
+    rdfs:label "birth date" ;
+    rdfs:domain nc-c:Consumer ;
+    rdfs:range rdfs:Date .
+
+schema:familyName a owl:DatatypeProperty;
+    rdfs:label "family name" ;
+    rdfs:domain nc-c:Consumer ;
+    rdfs:range rdfs:String .
+
+schema:gender a owl:DatatypeProperty;
+    rdfs:label "gender" ;
+    rdfs:domain nc-c:Consumer ;
+    rdfs:range rdfs:String .
+
+schema:givenName a owl:DatatypeProperty;
+    rdfs:label "given name" ;
+    rdfs:domain nc-c:Consumer ;
+    rdfs:range rdfs:String .
+
+schema:height a owl:DatatypeProperty;
+    rdfs:label "height" ;
+    rdfs:domain nc-c:Consumer ;
+    rdfs:range rdfs:Float .
+
+nc-c:hasDate a owl:DatatypeProperty;
+    rdfs:label "has date" ;
+    rdfs:domain nc-c:Activity ;
+    rdfs:range rdfs:Date .
+
+nc-c:hasDuration a owl:DatatypeProperty;
+    rdfs:label "has duration" ;
+    rdfs:domain nc-c:Activity ;
+    rdfs:range rdfs:Integer .
+
+nc-c:hasFrequency a owl:DatatypeProperty ;
+    rdfs:label "has frequency" ;
+    rdfs:domain nc-c:Activity ;
+    rdfs:range rdfs:Integer .
+
+nc-c:shoppingDate a owl:DatatypeProperty;
+    rdfs:label "purchase date" ;
+    rdfs:domain nc-c:ShoppingCart ;
+    rdfs:range rdfs:Date .
+
+nc-c:shoppingItemQuantity a owl:DatatypeProperty ;
+    rdfs:label "has quantity" ;
+    rdfs:domain nc-c:ShoppingItem ;
+    rdfs:range rdfs:Integer .
+
+nc-c:shoppingItemPrice a owl:DatatypeProperty ;
+    rdfs:label "has price" ;
+    rdfs:domain nc-c:ShoppingItem ;
+    rdfs:range rdfs:Float .
+
+# Object Properties
+
+nc-c:hasAddress a owl:ObjectProperty ;
+    rdfs:label "has address" ;
+    rdfs:domain nc-c:Consumer ;
+    rdfs:range schema:Address .
+
+nc-c:hasShoppingLocation a owl:ObjectProperty ;
+    rdfs:label "has shopping location" ;
+    rdfs:domain nc-c:ShoppingCart ;
+    rdfs:range schema:Address .
+
+nc-c:performs a owl:ObjectProperty ;
+    rdfs:label "performs" ;
+    rdfs:domain nc-c:Consumer ;
+    rdfs:range nc-c:Activity .
+
+nc-c:shoppingListContains a owl:ObjectProperty ;
+    rdfs:label "contains food item" ;
+    rdfs:domain nc-c:ShoppingList ;
+    rdfs:range nc-f:FoodItem .
+
+nc-c:includePreferences a owl:ObjectProperty ;
+    rdfs:label "owns shopping list" ;
+    rdfs:domain nc-c:Consumer ;
+    rdfs:range nc-c:ShoppingList .
+
+nc-c:hasPurchasedList a owl:ObjectProperty ;
+    rdfs:label "owns purchased item" ;
+    rdfs:domain nc-c:Consumer ;
+    rdfs:range nc-c:ShoppingCart .
+
+
+nc-c:hasWeightObservation a owl:ObjectProperty ;
+    rdfs:label "has weight observation" ;
+    rdfs:domain nc-c:Consumer ;
+    rdfs:range schema:WeightObservation .
+
+nc-c:shoppingCartContains a owl:ObjectProperty ;
+    rdfs:label "contains food item" ;
+    rdfs:domain nc-c:ShoppingCard ;
+    rdfs:range nc-f:ShoppingItem .
+
+
+nc-c:refersTo a owl:ObjectProperty ;
+    rdfs:label "refers to" ;
+    rdfs:domain nc-c:ShoppingItem ;
+    rdfs:range nc-f:FoodItem .
