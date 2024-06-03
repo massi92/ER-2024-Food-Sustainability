@@ -19,7 +19,7 @@ Key classes in this module include:
 - `Sustainability`: Reflects consumer preferences for sustainable practices.
 
 The schema of the cunsumer module is the following:
-![NextCart Food Ontology Schema]([https://link-to-schema-image](https://anonymous.4open.science/r/ER-2024-Food-Sustainability/images/consumer-habits.png))
+![NextCart Food Ontology Schema](https://anonymous.4open.science/r/ER-2024-Food-Sustainability/images/consumer-habits.png)
 
 ### Nutrition Module
 
