@@ -32,7 +32,7 @@ Key classes in this module include:
 - `NutritionalInformation`: Details nutritional aspects such as carbohydrates, fats, and proteins.
 
 The schema of the nutrition module is as follows:
-![NextCart Food Ontology Schema](https://anonymous.4open.science/r/ER-2024-Food-Sustainability/images/health-dietary.png)
+![NextCart Food Ontology Schema](https://anonymous.4open.science/r/ER-2024-Food-Sustainability/images/food-health.png)
 
 ### Sustainability Module
 
