@@ -9,11 +9,11 @@
 @prefix tb: <https://w3id.org/timebank/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
 
-nc-s: a owl:Ontology ;
-    <http://purl.org/dc/elements/1.1/creator> "---" ;
-    <http://purl.org/dc/elements/1.1/contributor> "---" ;
+nc-s:Ontology a owl:Ontology ;
+    <http://purl.org/dc/elements/1.1/creator>  "---" ;
+    <http://purl.org/dc/elements/1.1/contributor>  "---" ;
     owl:versionIRI <https://knowledge.next-cart.com/sustainability/1.0.0> ;
-    <http://purl.org/dc/elements/1.1/publisher> "---" ;
+    <http://purl.org/dc/elements/1.1/publisher>  "---" ;
     <http://purl.org/dc/elements/1.1/title> "The NextCart Ontology - Sustainability" ;
     <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
     <http://purl.org/vocab/vann/preferredNamespacePrefix> "nc-s" ;
@@ -115,12 +115,22 @@ nc-s:Composting a owl:Class ;
     rdfs:subClassOf nc-s:WasteManagement ;
     rdfs:comment "Organic waste management through composting." .
 
+nc-s:SustainableAlternative a owl:Class ;
+    rdfs:comment "Sustainable alternatives." .
+
+
 # Object Properties
 
 nc-s:hasSustainability a owl:ObjectProperty ;
     rdfs:domain nc-fsc:FoodSupplyChain ;    
     rdfs:label "has sustainability" ;
     rdfs:range nc-s:Sustainability .
+
+
+nc-s:hasSustainableAlternatives a owl:ObjectProperty ;
+    rdfs:domain nc-f:FoodItem ;    
+    rdfs:label "has sustainable alternatives" ;
+    rdfs:range nc-s:SustainableAlternative .
 
 nc-fsc:isStakeholderIn a owl:ObjectProperty ;
     rdfs:domain nc-fsc:Stakeholder ;
@@ -143,4 +153,4 @@ nc-s:hasSustainabilityMetric a owl:ObjectProperty ;
 
 nc-s:expirationDate a owl:DatatypeProperty ;
     rdfs:domain nc-f:FoodItem ;
-    rdfs:range rdfs:dateTime .
+    rdfs:range xsd:date .
