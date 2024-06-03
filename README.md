@@ -7,6 +7,10 @@ The NextCart Food Ontology is composed of 3 modules, published at:
 - Nutrition module: [Nutrition Ontology](https://anonymous.4open.science/r/ER-2024-Food-Sustainability/health-dietary.owl)
 - Sustainability module: [Sustainability Ontology](https://anonymous.4open.science/r/ER-2024-Food-Sustainability/sustainability.owl)
 
+The complete ontology, including the 3 modules is published at:
+- NextCart Food Ontology: [Complete Ontology](https://anonymous.4open.science/r/ER-2024-Food-Sustainability/complete.owl)
+
+
 ### Consumer Module
 
 The Consumer module captures a comprehensive view of a consumer's lifestyle, including their demographic information, activities (like sleep and sports), dietary choices, health conditions, and shopping habits. 
