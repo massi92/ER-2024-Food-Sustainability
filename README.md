@@ -14,6 +14,7 @@ The complete ontology, including the 3 modules is published at:
 ### Consumer Module
 
 The Consumer module captures a comprehensive view of a consumer's lifestyle, including their demographic information, activities (like sleep and sports), dietary choices, health conditions, and shopping habits. 
+
 Key classes in this module include:
 - `Activity`: Captures lifestyle activities, with subclasses `PhysicalActivity` and `Sleep`.
 - `WeightObservation`: Tracks changes in a consumer's weight over time.
