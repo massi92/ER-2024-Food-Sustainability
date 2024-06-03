@@ -32,7 +32,7 @@ Key classes in this module include:
 - `NutritionalInformation`: Details nutritional aspects such as carbohydrates, fats, and proteins.
 
 The schema of the nutrition module is as follows:
-![NextCart Food Ontology Schema]([https://link-to-schema-image](https://anonymous.4open.science/r/ER-2024-Food-Sustainability/images/health-dietary.png))
+![NextCart Food Ontology Schema](https://anonymous.4open.science/r/ER-2024-Food-Sustainability/images/health-dietary.png)
 
 ### Sustainability Module
 
@@ -46,4 +46,4 @@ Key classes in this module include:
 - `WasteManagement`: Addresses food waste and recycling processes, with subclasses `FoodWaste`, `Composition`, and `Recycling`.
 
 The schema of the sustainability module is as follows:
-![NextCart Food Ontology Schema]([https://link-to-schema-image](https://anonymous.4open.science/r/ER-2024-Food-Sustainability/images/sustainability.png))
+![NextCart Food Ontology Schema](https://anonymous.4open.science/r/ER-2024-Food-Sustainability/images/sustainability.png)
